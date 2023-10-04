@@ -4,9 +4,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -101,7 +104,7 @@ public class CreateBookController implements Initializable {
     }
 
     @FXML
-    void viewTable_onClick(ActionEvent event) {
-
+    void viewTable_onClick(ActionEvent event) throws IOException {
+        SceneChanger.changeScene(event, "book-table-view.fxml", "Book Table");
     }
 }
