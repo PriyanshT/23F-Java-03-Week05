@@ -84,7 +84,7 @@ public class Book {
     }
 
     public static List<String> findGenres(){
-        return Arrays.asList("Comedy", "Thriller", "Fiction", "Non-Fiction", "Fantasy", "Crime", "History");
+        return Arrays.asList("Comedy", "Thriller", "Fiction", "Non-Fiction", "Fantasy", "Crime", "History", "Drama");
     }
 
     public double getPrice() {
