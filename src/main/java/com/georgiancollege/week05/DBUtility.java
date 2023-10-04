@@ -80,7 +80,7 @@ public class DBUtility {
                 int unitsSold = resultSet.getInt("units_sold");
 
                 // create a book object for the variables
-                Book book = new Book(bookId, bookName, author, genre, price, isAvailable);
+                Book book = new Book(bookId, bookName, author, genre, price, isAvailable, unitsSold);
 
                 books.add(book);
             }

@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,7 +40,17 @@ public class BookTableController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<Book> books = DBUtility.getBooksFromDB();
-        System.out.println(books);
+        // System.out.println(books);
+
+        bookIdColumn.setCellValueFactory(new PropertyValueFactory<>("bookId"));
+        bookNameColumn.setCellValueFactory(new PropertyValueFactory<>("bookName"));
+        authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+        genreColumn.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        availabilityColumn.setCellValueFactory(new PropertyValueFactory<>("available"));
+        unitsSoldColumn.setCellValueFactory(new PropertyValueFactory<>("unitsSold"));
+
+        tableView.getItems().addAll(books);
     }
 
     @FXML
